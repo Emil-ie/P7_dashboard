@@ -1,8 +1,8 @@
-numpy
-pandas
-plotly
-requests
-shap
-streamlit
-xgboost
-matplotlib
+numpy==1.22.4
+pandas==1.4.2
+plotly==5.8.0
+requests==2.27.1
+shap==0.41.0
+streamlit==1.9.2
+xgboost==1.6.1
+matplotlib==3.5.2
