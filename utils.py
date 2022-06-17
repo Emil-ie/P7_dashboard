@@ -23,7 +23,7 @@ path = os.getcwd()
 
 def get_data(path):
 
-    data = pd.read_pickle(os.path.join(path, "data/dashboard_data.pkl"), index_col=0).drop(
+    data = pd.read_parquet(os.path.join(path, "data/dashboard_data.pkl"), index_col=0).drop(
         columns=["TARGET"]
     )
     return data
@@ -46,7 +46,7 @@ def get_model_and_score(info):
     seuil = 0.31
 
     # import des données
-    X_test = pd.read_pickle(os.path.join(path, "data/test.pkl"), index_col=0)
+    X_test = pd.read_parquet(os.path.join(path, "data/test.pkl"), index_col=0)
     prb = model.predict_proba(X_test)
     prb = pd.DataFrame(prb)
     prb_score = prb[1]
