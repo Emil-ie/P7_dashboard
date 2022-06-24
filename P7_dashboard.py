@@ -25,7 +25,7 @@ def main():
         ### Input ###
         SK_ID_CURR_user = st.selectbox("Identifiant : ", data.SK_ID_CURR.unique())
 
-        info = utils.get_info(SK_ID_CURR_user)
+        info = utils.get_info(SK_ID_CURR_user, data)
 
         if not SK_ID_CURR_user:
             st.warning("Element requis")
@@ -66,11 +66,9 @@ def main():
         st.pyplot(utils.plot_local(local))
 
     with col2:
-        st.pyplot(utils.plot_local(top_features))
+        st.pyplot(utils.plot_global(top_features))
 
 
+main()
 # Streamlit.io pour déployer
 # https://www.youtube.com/watch?v=kXvmqg8hc70
-# lien dashboard: https://github.com/nourou6c/P7_Dashboard
-
-# lien API: https://github.com/nourou6c/api
