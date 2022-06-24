@@ -40,7 +40,7 @@ def show_logo():
 
 
 def get_model_and_score(info):
-    model = pickle.load(open("model/model_pkl2"), "rb")
+    model = pickle.load(open("model/model_pkl2", "rb"))
     seuil = 0.31
 
     # import des données
