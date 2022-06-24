@@ -36,7 +36,7 @@ def get_info(SK_ID_CURR_user, data):
 
 
 def show_logo():
-    return Image.open("img/LOGO.png")
+    return Image.open("img/LOGO.PNG")
 
 
 def get_model_and_score(info):
