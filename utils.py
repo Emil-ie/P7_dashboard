@@ -21,11 +21,9 @@ from PIL import Image
 path = os.getcwd()
 
 
-def get_data(path=path):
+def get_data():
 
-    data = pd.read_parquet(os.path.join(path, "data/dashboard_data.parquet")).drop(
-        columns=["TARGET"]
-    )
+    data = pd.read_parquet("data/dashboard_data.parquet").drop(columns=["TARGET"])
     return data
 
 
@@ -38,15 +36,15 @@ def get_info(SK_ID_CURR_user, data):
 
 
 def show_logo():
-    return Image.open(os.path.join(path, "img/LOGO.png"))
+    return Image.open("img/LOGO.png")
 
 
 def get_model_and_score(info):
-    model = pickle.load(open(os.path.join(path, "model/model_pkl2"), "rb"))
+    model = pickle.load(open("model/model_pkl2"), "rb")
     seuil = 0.31
 
     # import des données
-    X_test = pd.read_parquet(os.path.join(path, "data/test.parquet"))
+    X_test = pd.read_parquet("data/test.parquet")
     prb = model.predict_proba(X_test)
     prb = pd.DataFrame(prb)
     prb_score = prb[1]
